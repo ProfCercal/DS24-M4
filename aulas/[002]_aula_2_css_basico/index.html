@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site do Batman</title>
+
+    <style>
+      /* TAG NOVA: <style>
+         Serve para escrever CSS dentro do próprio HTML.
+         Tudo aqui dentro são regras de estilo que o navegador aplica aos elementos. */
+
+      * {
+        /* Seletor universal (*): seleciona TODOS os elementos da página. */
+        box-sizing: border-box;
+        /* box-sizing define como o tamanho (width/height) é calculado.
+           border-box = o padding e a borda entram “dentro” do width/height, facilitando o controle do layout. */
+      }
+
+      body {
+        /* Seletor por tag: aplica em todos os <body>. */
+        margin: 0;
+        /* Remove a margem padrão do navegador (o “espaço branco” ao redor da página). */
+
+        color: aliceblue;
+        /* Cor padrão do texto (herdada por muitos elementos filhos). */
+
+        background-color: black;
+        /* Cor de fundo do site. */
+
+        font-family: system-ui, Arial, sans-serif;
+        /* Fonte do texto:
+           system-ui = fonte padrão do sistema (Windows/macOS/Android etc.).
+           Arial e sans-serif são “plano B” se system-ui não existir. */
+
+        line-height: 1.5;
+        /* Altura da linha do texto (melhora leitura). */
+      }
+
+      .container {
+        /* Seletor por classe (.container): vale para qualquer elemento com class="container". */
+        width: 900px;
+        /* Largura fixa do “miolo” do site (não responsivo, proposital). */
+
+        margin: 0 auto;
+        /* Centraliza horizontalmente:
+           0 = margem topo/baixo
+           auto = o navegador divide o espaço sobrando nas laterais. */
+
+        padding: 10px;
+        /* Espaço interno da caixa container (conteúdo não encosta na borda). */
+      }
+
+      .box {
+        /* Classe reaproveitável para criar “caixas/cartões” com fundo e borda. */
+        background: rgba(0, 0, 0, 0.75);
+        /* Fundo preto com transparência (rgba). */
+
+        border: 1px solid rgba(240, 240, 255, 0.35);
+        /* Borda fina e clara com transparência. */
+
+        border-radius: 12px;
+        /* Cantos arredondados. */
+
+        padding: 14px;
+        /* Espaço interno do card. */
+
+        margin-bottom: 12px;
+        /* Espaço externo abaixo do card (separa um card do outro). */
+      }
+
+      h1,
+      h2 {
+        /* Lista de seletores: aplica o mesmo estilo para h1 e h2 ao mesmo tempo. */
+        color: rgb(255, 221, 0);
+        /* Cor amarela estilo “Batman”. */
+
+        margin: 0 0 8px;
+        /* margin com 3 valores = topo | laterais | baixo
+           topo 0, esquerda/direita 0, baixo 8px */
+      }
+
+      .subtitulo {
+        /* Classe para o parágrafo de subtítulo (não afeta todos os <p>, só os que tiverem essa classe). */
+        margin: 0;
+        color: #d1d5db;
+        /* Cor cinza clara (hex). */
+      }
+
+      p {
+        /* Seletor por tag: aplica em TODOS os parágrafos (<p>) da página. */
+        color: aqua;
+      }
+
+      #apresentacao {
+        /* Seletor por id (#apresentacao): aplica SOMENTE no elemento com id="apresentacao". */
+        border-left: 8px solid rgb(255, 221, 0);
+        /* Borda grossa na esquerda para destacar a seção. */
+      }
+
+      .nav {
+        /* Classe aplicada na <ul> para virar um menu horizontal com flex. */
+        list-style: none;
+        /* Remove as bolinhas padrão da lista. */
+
+        margin: 0;
+        padding: 0;
+        /* Remove espaço padrão de listas. */
+
+        display: flex;
+        /* TRANSFORMA a <ul> em “flex container”.
+           Os <li> viram itens em linha (por padrão). */
+
+        gap: 10px;
+        /* Espaço entre os itens do flex (entre os <li>). */
+
+        flex-wrap: nowrap;
+        /* Não permite quebrar linha: se não couber, estoura (não responsivo, proposital). */
+      }
+
+      .nav-link {
+        /* Classe aplicada nos links (<a>) do menu para parecer botão. */
+        display: inline-block;
+        /* Link vira “caixinha” com padding e dimensões mais previsíveis. */
+
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link. */
+
+        color: black;
+        /* Cor do texto do link. */
+
+        background: rgb(255, 221, 0);
+        /* Fundo amarelo (tema Batman). */
+
+        padding: 8px 10px;
+        /* Espaço interno do “botão”. */
+
+        border-radius: 10px;
+        /* Cantos arredondados. */
+
+        font-weight: 700;
+        /* Texto mais “forte” (negrito). */
+      }
+
+      .nav-link:hover {
+        /* Pseudo-classe :hover = estado “quando passa o mouse em cima”. */
+        background: rgb(255, 200, 0);
+        /* Troca a cor para dar feedback visual no hover. */
+      }
+
+      .gallery {
+        /* Classe aplicada na div da galeria para alinhar imagens em linha. */
+        width: 920px;
+        /* Largura fixa (pode estourar o container, isso evidencia o problema de não responsivo). */
+
+        display: flex;
+        /* Coloca as imagens lado a lado. */
+
+        gap: 10px;
+        /* Espaço entre as imagens. */
+
+        flex-wrap: nowrap;
+        /* Não quebra linha. */
+      }
+
+      .bat-img {
+        /* Classe aplicada nas imagens da galeria. */
+        width: 220px;
+        height: 120px;
+        /* Tamanho fixo da imagem (pode distorcer se a proporção original for diferente). */
+
+        border: 2px solid aliceblue;
+        border-radius: 10px;
+        /* Borda e cantos arredondados para “cartão”. */
+      }
+
+      footer p {
+        /* Seletor combinado (descendente): todo <p> que estiver dentro de <footer>. */
+        color: rgb(233, 21, 187);
+        /* Aqui sobrescreve o p { color: aqua; } porque é mais específico. */
+
+        margin: 6px 0 0;
+        /* topo 6px, laterais 0, baixo 0 */
+      }
+
+      .link {
+        /* Classe de link do rodapé (cor amarela e sem sublinhado). */
+        color: rgb(255, 221, 0);
+        text-decoration: none;
+      }
+
+      .link:hover {
+        /* Ao passar o mouse, sublinha para mostrar que é clicável. */
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body id="topo">
+    <!-- id="topo" é usado como “âncora”: o link <a href="#topo"> leva o usuário para o topo da página. -->
+
+    <div class="container" id="pagina">
+      <!-- NOVO: uso de classes e ids juntos:
+           class="container" aplica um estilo reutilizável.
+           id="pagina" identifica esta área como única. -->
+
+      <header class="box" id="cabecalho">
+        <div class="header-interno">
+          <!-- TAG NOVA (na prática de CSS): <div>
+               É um contêiner genérico para agrupar elementos e aplicar layout/estilo.
+               Aqui agrupa título + subtítulo dentro do header. -->
+
+          <h1 class="titulo">Site do Batman</h1>
+
+          <p class="subtitulo">
+            Gotham City: <strong>vigilância</strong>, <em> estratégia</em> e
+            tecnologia.
+          </p>
+        </div>
+      </header>
+
+      <nav class="box" id="menu">
+        <ul class="nav">
+          <!-- TAG NOVA: <ul> e <li>
+               <ul> = lista não ordenada (com itens).
+               <li> = cada item da lista.
+               Aqui é usado para criar um menu com itens de navegação. -->
+
+          <li><a class="nav-link" href="#apresentacao">Quem é?</a></li>
+          <!-- <a href="#apresentacao"> é link para âncora interna (id="apresentacao"). -->
+          <li><a class="nav-link" href="#galeria">Galeria</a></li>
+          <li><a class="nav-link" href="#rodape">Rodapé</a></li>
+        </ul>
+      </nav>
+
+      <main id="conteudo">
+        <section class="box" id="apresentacao">
+          <h2>Quem é o Batman?</h2>
+          <p>
+            Batman (Bruce Wayne) é um personagem da DC Comics e atua como
+            justiceiro (sem ninguém ter pedido isso a ele) de Gotham. Ele não
+            tem superpoderes: sua força está em <strong>treinamento</strong>,
+            <em>tecnologia</em> e riqueza (muita riqueza).
+          </p>
+          <p>
+            Em várias histórias, Gotham representa problemas sociais:
+            desigualdade, corrupção e violência urbana. Alguns quadrinhos usam o
+            Batman como forma de <strong>crítica social</strong>, mostrando como
+            falhas nas instituições, interesses econômicos e autoritarismo
+            afetam principalmente quem tem menos direitos e oportunidades.
+          </p>
+        </section>
+
+        <section class="box" id="galeria">
+          <h2>Galeria</h2>
+
+          <div class="gallery" id="galeria-imagens">
+            <img class="bat-img" src="batman_1.webp" alt="Batman raivoso." />
+            <img class="bat-img" src="batman_2.jpg" alt="Batman namorando." />
+            <img class="bat-img" src="batman_3.jpg" alt="Batman reflitão." />
+          </div>
+        </section>
+      </main>
+
+      <footer class="box" id="rodape">
+        <p>
+          <a class="link" href="#topo">Topo</a>
+        </p>
+
+        <p>Exemplo de website para treino de HTML e CSS.</p>
+      </footer>
+    </div>
+  </body>
+</html>
