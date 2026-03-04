@@ -19,13 +19,13 @@ Este repositório é a pasta central da turma **DS24 M4**. Aqui ficam os exemplo
 
 ### Aulas
 
-- [Aula 01 — HTML básico](aulas/01-html-basico/README.md)
-- [Aula 02 — CSS básico (Site do Batman)](aulas/02-css-basico-batman/README.md)
+- [Aula 01 — HTML básico](aulas/01-aula-1-html-basico/README.md)
+- [Aula 02 — CSS básico (Site do Batman)](aulas/02-aula-02-css-basico/README.md)
 
 ### Atividades
 
-- [Atividade 01 — Site do Batman (CSS básico)](atividades/01-site-batman/README.md)
-- [Atividade 02 — Site do Grêmio (cards com flex-wrap + elemento fixo)](atividades/02-site-gremio/README.md)
+- [Atividade 01 — Consolidando o conhecimento em HTML (HTML básico)](atividades/01-atividade-1-consolidando-html/README.md)
+- [Atividade 02 — Site do Grêmio (cards com flex-wrap + elemento fixo)](atividades/02-atividade-2-site-do-gremio/README.md)
 
 ## Padrões gerais (para atividades)
 
