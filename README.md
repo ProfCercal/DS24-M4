@@ -1,4 +1,4 @@
-# DS24 M3 (Turma) — Materiais, Aulas e Atividades
+# DS24 M4 (Turma) — Materiais, Aulas e Atividades
 
 Este repositório é a pasta central da turma **DS24 M4**. Aqui ficam os exemplos feitos em sala, roteiros e bases para atividades.
 
