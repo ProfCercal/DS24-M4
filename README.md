@@ -21,6 +21,7 @@ Este repositório é a pasta central da turma **DS24 M4**. Aqui ficam os exemplo
 
 - [Aula 01 — HTML básico](aulas/01-aula-1-html-basico/README.md)
 - [Aula 02 — CSS básico (Site do Batman)](aulas/02-aula-2-css-basico/README.md)
+- [Aula 03 — Website com leiaute por divs (Site do Palmeiras)](aulas/03-aula-3-leiautes-divs/README.md)
 
 ### Atividades
 

@@ -1,0 +1,770 @@
+:root {
+  --verde-1: #053b1f;
+  --verde-2: #0c5a2e;
+  --verde-3: #12753d;
+  --verde-4: #1ca151;
+  --branco: #f6fbf7;
+  --cinza: #d7e3da;
+  --sombra: 0 18px 42px rgba(3, 24, 12, 0.18);
+  --sombra-hover: 0 24px 54px rgba(3, 24, 12, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  color: #15311f;
+  background:
+    radial-gradient(circle at top left,
+      rgba(28, 161, 81, 0.15),
+      transparent 30%),
+    linear-gradient(180deg, #f6fbf7 0%, #edf6ef 60%, #e8f2ea 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(5, 59, 31, 0.86);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.topo {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-img {
+  width: 72px;
+  height: 86px;
+}
+
+.marca-kicker {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.marca-texto h1 {
+  margin: 2px 0 0;
+  color: var(--branco);
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  line-height: 1;
+}
+
+.menu-lista {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.menu-lista a {
+  text-decoration: none;
+  color: var(--branco);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition:
+    transform 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.menu-lista a:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: var(--branco);
+  color: var(--verde-1);
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+section {
+  margin-bottom: 32px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(12, 90, 46, 0.1);
+  border-radius: 28px;
+  box-shadow: var(--sombra);
+}
+
+.secao-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.secao-kicker {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--verde-3);
+}
+
+.secao-titulo-box h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--verde-1);
+}
+
+.secao-resumo {
+  margin: 12px 0 0;
+  max-width: 780px;
+  color: #355545;
+}
+
+.secao-badge {
+  min-width: 120px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--verde-2), var(--verde-4));
+  color: var(--branco);
+  text-align: center;
+  box-shadow: 0 16px 30px rgba(12, 90, 46, 0.22);
+}
+
+.badge-numero {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badge-texto {
+  margin-top: 8px;
+  font-size: 0.86rem;
+}
+
+.sobre-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.bloco-texto,
+.bloco-centralizado,
+.galeria-card,
+.simbolos-box,
+.banco-box,
+.tecnico-box,
+.camisa-card,
+.tabela-box {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.bloco-duplo {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.bloco-reverso {
+  grid-template-columns: 0.95fr 1.2fr;
+}
+
+.bloco-coluna {
+  background: linear-gradient(180deg, #ffffff, #f2f8f3);
+  border: 1px solid rgba(12, 90, 46, 0.08);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 10px 28px rgba(4, 36, 18, 0.08);
+}
+
+.bloco-coluna-texto p,
+.bloco-centralizado p,
+.simbolos-texto p,
+.tecnico-box span,
+.camisa-legenda p {
+  margin: 0;
+}
+
+.bloco-coluna-imagem,
+.bloco-coluna-imagem-logo,
+.simbolos-imagem,
+.camisa-imagem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.bloco-coluna-imagem img,
+.imagem-larga-box img,
+.galeria-card img,
+.camisa-imagem img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(3, 24, 12, 0.14);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.bloco-coluna-imagem-logo img {
+  max-width: 260px;
+}
+
+.bloco-coluna-imagem img:hover,
+.imagem-larga-box img:hover,
+.galeria-card img:hover,
+.camisa-imagem img:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--sombra-hover);
+}
+
+.legenda {
+  font-size: 0.92rem;
+  color: #4d6658;
+  margin: 0;
+  text-align: center;
+}
+
+.mini-escudo-box {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(12, 90, 46, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.mini-escudo-box img {
+  width: 120px;
+}
+
+.bloco-centralizado {
+  padding: 24px 28px;
+  text-align: center;
+  background: linear-gradient(135deg,
+      rgba(12, 90, 46, 0.06),
+      rgba(28, 161, 81, 0.06));
+  border: 1px solid rgba(12, 90, 46, 0.08);
+}
+
+.bloco-escuro {
+  background: linear-gradient(135deg,
+      rgba(5, 59, 31, 0.95),
+      rgba(12, 90, 46, 0.92));
+  color: var(--branco);
+}
+
+.destaque-verde {
+  background: linear-gradient(135deg,
+      rgba(28, 161, 81, 0.14),
+      rgba(5, 59, 31, 0.09));
+}
+
+.galeria-dupla,
+.galeria-tripla,
+.camisas-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.galeria-dupla {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.galeria-tripla,
+.camisas-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.galeria-card,
+.camisa-card {
+  background: linear-gradient(180deg, #ffffff, #eef5ef);
+  padding: 16px;
+  border: 1px solid rgba(12, 90, 46, 0.08);
+}
+
+.pequeno-hover {
+  transition: transform 0.24s ease;
+}
+
+.pequeno-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.imagem-larga-box {
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff, #eef5ef);
+  border: 1px solid rgba(12, 90, 46, 0.08);
+}
+
+.simbolos-box {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 18px;
+  background: linear-gradient(135deg,
+      rgba(12, 90, 46, 0.06),
+      rgba(12, 90, 46, 0.12));
+  border: 1px solid rgba(12, 90, 46, 0.08);
+  padding: 24px;
+}
+
+.simbolos-texto h3,
+.banco-box h3,
+.tecnico-box h3,
+.camisa-legenda h3,
+.tabela-box h3 {
+  margin: 0 0 10px;
+  color: var(--verde-1);
+  font-size: 1.25rem;
+}
+
+.simbolos-imagem img {
+  max-width: 250px;
+}
+
+.elenco-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 360px;
+  gap: 20px;
+  align-items: start;
+}
+
+.campo-area {
+  min-width: 0;
+}
+
+.campo {
+  position: relative;
+  min-height: 1180px;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(5, 59, 31, 0.28), rgba(5, 59, 31, 0.28)),
+    url("assets/campo.png") center/cover no-repeat;
+  box-shadow:
+    inset 0 0 0 8px rgba(255, 255, 255, 0.28),
+    var(--sombra);
+  border: 6px solid rgba(255, 255, 255, 0.65);
+}
+
+.jogador-card {
+  position: absolute;
+  width: 225px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(12, 90, 46, 0.14);
+  box-shadow: 0 14px 30px rgba(3, 24, 12, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.jogador-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 18px 34px rgba(3, 24, 12, 0.26);
+}
+
+.jogador-foto,
+.jogador-placeholder {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 2px solid rgba(12, 90, 46, 0.18);
+}
+
+.jogador-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jogador-placeholder {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--verde-2), var(--verde-4));
+  color: var(--branco);
+  font-weight: 800;
+}
+
+.jogador-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.jogador-info strong {
+  font-size: 0.9rem;
+  color: var(--verde-1);
+}
+
+.jogador-info span {
+  font-size: 0.8rem;
+  color: #456455;
+}
+
+.jogador-goleiro {
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+}
+
+.jogador-goleiro:hover {
+  transform: translateX(-50%) translateY(-5px) scale(1.03);
+}
+
+.jogador-ld {
+  right: 25px;
+  bottom: 430px;
+}
+
+.jogador-zd {
+  left: 55%;
+  bottom: 230px;
+}
+
+.jogador-ze {
+  right: 55%;
+  bottom: 230px;
+}
+
+.jogador-le {
+  left: 25px;
+  bottom: 390px;
+}
+
+.jogador-vol-1 {
+  right: 15%;
+  bottom: 630px;
+}
+
+.jogador-vol-2 {
+  left: 15%;
+  bottom: 680px;
+}
+
+.jogador-pe {
+  left: 40px;
+  top: 280px;
+}
+
+.jogador-pd {
+  right: 30px;
+  top: 250px;
+}
+
+.jogador-at-1 {
+  right: 15%;
+  top: 150px;
+}
+
+.jogador-at-2 {
+  left: 20%;
+  top: 80px;
+}
+
+.banco-area {
+  display: grid;
+  gap: 18px;
+}
+
+.banco-box,
+.tecnico-box {
+  padding: 22px;
+  background: linear-gradient(180deg, #ffffff, #edf5ee);
+  border: 1px solid rgba(12, 90, 46, 0.08);
+  box-shadow: 0 10px 24px rgba(3, 24, 12, 0.08);
+}
+
+.reservas-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.reserva-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 2px 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(12, 90, 46, 0.05);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.reserva-item:hover {
+  transform: translateX(4px);
+  background: rgba(12, 90, 46, 0.1);
+}
+
+.reserva-item strong {
+  grid-row: span 2;
+  font-size: 1.1rem;
+  color: var(--verde-2);
+}
+
+.reserva-item span {
+  font-weight: 600;
+  color: #1b3a27;
+}
+
+.reserva-item em {
+  font-style: normal;
+  color: #53705f;
+  font-size: 0.88rem;
+}
+
+.tecnico-box {
+  background: linear-gradient(135deg,
+      rgba(5, 59, 31, 0.95),
+      rgba(12, 90, 46, 0.92));
+  color: var(--branco);
+}
+
+.tecnico-box h3,
+.tecnico-box p {
+  color: var(--branco);
+}
+
+.tecnico-box p {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.camisa-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.camisa-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--sombra-hover);
+}
+
+.camisa-imagem {
+  min-height: 360px;
+  padding: 18px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top, rgba(12, 90, 46, 0.12), transparent 45%),
+    #f7fbf8;
+}
+
+.camisa-imagem img {
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.camisa-legenda {
+  padding: 0 4px 8px;
+}
+
+.destaque-dourado {
+  background: linear-gradient(180deg, #fffdfa, #fff7df);
+}
+
+.tabelas-titulos {
+  display: grid;
+  gap: 18px;
+}
+
+.tabela-box {
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff, #edf5ee);
+  border: 1px solid rgba(12, 90, 46, 0.08);
+}
+
+.tabela-menor,
+.tabela-grande {
+  grid-column: 1 / -1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(12, 90, 46, 0.08);
+  vertical-align: top;
+}
+
+th {
+  background: var(--verde-1);
+  color: var(--branco);
+  font-size: 0.92rem;
+}
+
+tbody tr:nth-child(even) td {
+  background: rgba(12, 90, 46, 0.04);
+}
+
+tbody tr:hover td {
+  background: rgba(12, 90, 46, 0.08);
+}
+
+footer {
+  background: var(--verde-1);
+  color: var(--branco);
+}
+
+.footer-conteudo {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-conteudo p {
+  margin: 0;
+}
+
+.footer-conteudo a {
+  color: var(--branco);
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-conteudo a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1080px) {
+
+  .elenco-layout,
+  .bloco-duplo,
+  .bloco-reverso,
+  .simbolos-box,
+  .galeria-dupla,
+  .galeria-tripla,
+  .camisas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campo {
+    min-height: 1320px;
+  }
+
+  .jogador-card {
+    width: 160px;
+  }
+}
+
+@media (max-width: 840px) {
+
+  .topo,
+  .secao-cabecalho,
+  .footer-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-lista {
+    justify-content: flex-start;
+  }
+
+  main {
+    padding: 24px 16px 40px;
+  }
+
+  section {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .campo {
+    min-height: 1450px;
+  }
+}
+
+@media (max-width: 640px) {
+  .jogador-card {
+    width: 142px;
+    padding: 8px;
+  }
+
+  .jogador-foto,
+  .jogador-placeholder {
+    width: 48px;
+    height: 48px;
+  }
+
+  .jogador-info strong {
+    font-size: 0.8rem;
+  }
+
+  .jogador-info span {
+    font-size: 0.72rem;
+  }
+
+  .campo {
+    min-height: 1320px;
+    background-position: center top;
+  }
+}
