@@ -1,4 +1,6 @@
 :root {
+  /* :root representa a raiz do documento.
+     Aqui ele foi usado para criar variáveis CSS reutilizáveis. */
   --verde-1: #053b1f;
   --verde-2: #0c5a2e;
   --verde-3: #12753d;
@@ -7,11 +9,14 @@
   --cinza: #d7e3da;
   --sombra: 0 18px 42px rgba(3, 24, 12, 0.18);
   --sombra-hover: 0 24px 54px rgba(3, 24, 12, 0.3);
+  /* Variáveis CSS:
+     ajudam a padronizar cores e sombras sem repetir valores no arquivo inteiro. */
 }
 
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* Faz a rolagem da página ficar suave ao clicar em links internos (#ancoras). */
 }
 
 body {
@@ -23,31 +28,54 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+  /* Pilha de fontes: o navegador tenta usar a primeira disponível. */
+
   line-height: 1.6;
   color: #15311f;
   background:
-    radial-gradient(circle at top left,
+    radial-gradient(
+      circle at top left,
       rgba(28, 161, 81, 0.15),
-      transparent 30%),
+      transparent 30%
+    ),
     linear-gradient(180deg, #f6fbf7 0%, #edf6ef 60%, #e8f2ea 100%);
+  /* Gradientes:
+     radial-gradient = efeito circular/de luz
+     linear-gradient = transição em linha reta
+     Aqui há duas camadas de fundo. */
 }
 
 img {
   max-width: 100%;
+  /* A imagem nunca passa da largura do elemento pai. */
+
   display: block;
+  /* Remove o comportamento inline da imagem e evita espaços indesejados. */
 }
 
 header {
   position: sticky;
+  /* sticky = o elemento rola normalmente, mas “gruda” no ponto definido. */
+
   top: 0;
+  /* Indica que ele deve grudar no topo. */
+
   z-index: 50;
+  /* Controla a sobreposição dos elementos.
+     Quanto maior, mais “na frente” ele fica. */
+
   backdrop-filter: blur(10px);
+  /* Aplica um desfoque no que está atrás do header. */
+
   background: rgba(5, 59, 31, 0.86);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  /* box-shadow cria sombra externa para dar profundidade. */
 }
 
 .topo {
   max-width: 1280px;
+  /* Limita a largura máxima, mas permite que o elemento seja menor. */
+
   margin: 0 auto;
   padding: 14px 24px;
   display: flex;
@@ -71,14 +99,22 @@ header {
   margin: 0;
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.82rem;
+  /* rem = unidade relativa ao tamanho base da fonte da página. */
+
   letter-spacing: 0.08em;
+  /* Aumenta o espaçamento entre letras. */
+
   text-transform: uppercase;
+  /* Coloca o texto em maiúsculas. */
 }
 
 .marca-texto h1 {
   margin: 2px 0 0;
   color: var(--branco);
   font-size: clamp(1.6rem, 2vw, 2.4rem);
+  /* clamp(min, ideal, max):
+     define um tamanho flexível com limite mínimo e máximo. */
+
   line-height: 1;
 }
 
@@ -89,6 +125,8 @@ header {
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  /* wrap permite quebrar a linha se os itens não couberem. */
+
   justify-content: flex-end;
 }
 
@@ -103,10 +141,15 @@ header {
     transform 0.22s ease,
     background-color 0.22s ease,
     color 0.22s ease;
+  /* transition cria mudança suave quando as propriedades variam. */
 }
 
 .menu-lista a:hover {
   transform: translateY(-2px) scale(1.03);
+  /* transform:
+     translateY = move no eixo vertical
+     scale = aumenta/reduz o tamanho */
+
   background: var(--branco);
   color: var(--verde-1);
 }
@@ -158,6 +201,8 @@ section {
 
 .secao-badge {
   min-width: 120px;
+  /* Define uma largura mínima. O elemento pode crescer, mas não pode ficar menor que isso. */
+
   padding: 18px;
   border-radius: 22px;
   background: linear-gradient(135deg, var(--verde-2), var(--verde-4));
@@ -179,6 +224,8 @@ section {
 
 .sobre-grid {
   display: grid;
+  /* grid = modelo de layout em grade (linhas e colunas). */
+
   gap: 22px;
 }
 
@@ -192,13 +239,17 @@ section {
 .tabela-box {
   border-radius: 24px;
   overflow: hidden;
+  /* Tudo que ultrapassar os limites da caixa será cortado. */
 }
 
 .bloco-duplo {
   display: grid;
   grid-template-columns: 1.25fr 0.9fr;
+  /* fr = fração do espaço disponível. */
+
   gap: 18px;
   align-items: stretch;
+  /* Faz os itens tentarem ocupar toda a altura da linha. */
 }
 
 .bloco-reverso {
@@ -227,6 +278,8 @@ section {
 .camisa-imagem {
   display: flex;
   flex-direction: column;
+  /* Coloca os itens um abaixo do outro. */
+
   justify-content: center;
   align-items: center;
   gap: 12px;
@@ -280,23 +333,29 @@ section {
 .bloco-centralizado {
   padding: 24px 28px;
   text-align: center;
-  background: linear-gradient(135deg,
-      rgba(12, 90, 46, 0.06),
-      rgba(28, 161, 81, 0.06));
+  background: linear-gradient(
+    135deg,
+    rgba(12, 90, 46, 0.06),
+    rgba(28, 161, 81, 0.06)
+  );
   border: 1px solid rgba(12, 90, 46, 0.08);
 }
 
 .bloco-escuro {
-  background: linear-gradient(135deg,
-      rgba(5, 59, 31, 0.95),
-      rgba(12, 90, 46, 0.92));
+  background: linear-gradient(
+    135deg,
+    rgba(5, 59, 31, 0.95),
+    rgba(12, 90, 46, 0.92)
+  );
   color: var(--branco);
 }
 
 .destaque-verde {
-  background: linear-gradient(135deg,
-      rgba(28, 161, 81, 0.14),
-      rgba(5, 59, 31, 0.09));
+  background: linear-gradient(
+    135deg,
+    rgba(28, 161, 81, 0.14),
+    rgba(5, 59, 31, 0.09)
+  );
 }
 
 .galeria-dupla,
@@ -308,6 +367,8 @@ section {
 
 .galeria-dupla {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* repeat repete colunas.
+     minmax define um intervalo: mínimo e máximo. */
 }
 
 .galeria-tripla,
@@ -341,9 +402,11 @@ section {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 18px;
-  background: linear-gradient(135deg,
-      rgba(12, 90, 46, 0.06),
-      rgba(12, 90, 46, 0.12));
+  background: linear-gradient(
+    135deg,
+    rgba(12, 90, 46, 0.06),
+    rgba(12, 90, 46, 0.12)
+  );
   border: 1px solid rgba(12, 90, 46, 0.08);
   padding: 24px;
 }
@@ -365,30 +428,42 @@ section {
 .elenco-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) 360px;
+  /* Primeira coluna flexível; segunda coluna fixa em 360px. */
+
   gap: 20px;
   align-items: start;
 }
 
 .campo-area {
   min-width: 0;
+  /* Ajuda a evitar estouro horizontal em layouts com grid/flex. */
 }
 
 .campo {
   position: relative;
   min-height: 1180px;
+  /* Altura mínima. O elemento pode crescer, mas não fica menor que isso. */
+
   border-radius: 28px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(5, 59, 31, 0.28), rgba(5, 59, 31, 0.28)),
     url("assets/campo.png") center/cover no-repeat;
+  /* background com duas camadas:
+     um gradiente escuro + imagem do campo */
+
   box-shadow:
     inset 0 0 0 8px rgba(255, 255, 255, 0.28),
     var(--sombra);
+  /* inset = sombra interna */
+
   border: 6px solid rgba(255, 255, 255, 0.65);
 }
 
 .jogador-card {
   position: absolute;
+  /* Sai do fluxo normal e passa a ser colocado livremente dentro do .campo */
+
   width: 225px;
   padding: 10px;
   border-radius: 20px;
@@ -414,6 +489,8 @@ section {
   height: 58px;
   border-radius: 50%;
   flex-shrink: 0;
+  /* Impede que esse item encolha dentro do flex */
+
   overflow: hidden;
   border: 2px solid rgba(12, 90, 46, 0.18);
 }
@@ -422,11 +499,15 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Faz a imagem preencher a caixa sem deformar.
+     Pode cortar partes da imagem. */
 }
 
 .jogador-placeholder {
   display: grid;
   place-items: center;
+  /* Atalho do grid para centralizar horizontal e verticalmente. */
+
   background: linear-gradient(135deg, var(--verde-2), var(--verde-4));
   color: var(--branco);
   font-weight: 800;
@@ -452,10 +533,12 @@ section {
   left: 50%;
   bottom: 100px;
   transform: translateX(-50%);
+  /* Centraliza o card a partir do meio da tela/campo. */
 }
 
 .jogador-goleiro:hover {
   transform: translateX(-50%) translateY(-5px) scale(1.03);
+  /* Mantém o translateX original + adiciona o efeito do hover. */
 }
 
 .jogador-ld {
@@ -546,6 +629,8 @@ section {
 
 .reserva-item strong {
   grid-row: span 2;
+  /* Faz esse item ocupar duas linhas da grade. */
+
   font-size: 1.1rem;
   color: var(--verde-2);
 }
@@ -557,14 +642,18 @@ section {
 
 .reserva-item em {
   font-style: normal;
+  /* Remove o itálico padrão do <em>. */
+
   color: #53705f;
   font-size: 0.88rem;
 }
 
 .tecnico-box {
-  background: linear-gradient(135deg,
-      rgba(5, 59, 31, 0.95),
-      rgba(12, 90, 46, 0.92));
+  background: linear-gradient(
+    135deg,
+    rgba(5, 59, 31, 0.95),
+    rgba(12, 90, 46, 0.92)
+  );
   color: var(--branco);
 }
 
@@ -605,6 +694,8 @@ section {
 .camisa-imagem img {
   max-height: 320px;
   object-fit: contain;
+  /* Diferente do cover:
+     contain faz a imagem inteira caber sem cortar. */
 }
 
 .camisa-legenda {
@@ -629,11 +720,14 @@ section {
 .tabela-menor,
 .tabela-grande {
   grid-column: 1 / -1;
+  /* Faz o elemento ocupar todas as colunas do grid. */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  /* Junta as bordas da tabela. */
+
   border-radius: 18px;
   overflow: hidden;
 }
@@ -644,6 +738,7 @@ td {
   text-align: left;
   border-bottom: 1px solid rgba(12, 90, 46, 0.08);
   vertical-align: top;
+  /* Alinha o conteúdo da célula no topo. */
 }
 
 th {
@@ -654,6 +749,7 @@ th {
 
 tbody tr:nth-child(even) td {
   background: rgba(12, 90, 46, 0.04);
+  /* nth-child(even) seleciona linhas pares. */
 }
 
 tbody tr:hover td {
@@ -696,6 +792,8 @@ footer {
 }
 
 @media (max-width: 1080px) {
+  /* Media query:
+     aplica estas regras só quando a tela tiver até 1080px */
 
   .elenco-layout,
   .bloco-duplo,
@@ -705,6 +803,7 @@ footer {
   .galeria-tripla,
   .camisas-grid {
     grid-template-columns: 1fr;
+    /* Tudo vira uma coluna só em telas menores. */
   }
 
   .campo {
@@ -717,7 +816,6 @@ footer {
 }
 
 @media (max-width: 840px) {
-
   .topo,
   .secao-cabecalho,
   .footer-conteudo {
@@ -766,5 +864,6 @@ footer {
   .campo {
     min-height: 1320px;
     background-position: center top;
+    /* Ajusta a posição da imagem de fundo em telas menores. */
   }
 }
