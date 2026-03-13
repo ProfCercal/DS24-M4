@@ -27,6 +27,7 @@ Este repositório é a pasta central da turma **DS24 M4**. Aqui ficam os exemplo
 
 - [Atividade 01 — Consolidando o conhecimento em HTML (HTML básico)](atividades/01-atividade-1-consolidando-html/README.md)
 - [Atividade 02 — Site do Grêmio (cards com flex-wrap + elemento fixo)](atividades/02-atividade-2-site-do-gremio/README.md)
+- [Atividade 03 — Leiautes com divs](atividades/03-atividade-3-leiautes-divs/README.md)
 
 ## Padrões gerais (para atividades)
 
